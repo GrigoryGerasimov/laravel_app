@@ -3,8 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'App\Http\Controllers\Todo'], function() {
+    Route::get('/', 'IndexController')->name('todo.index');
+    Route::get('/todo/create', 'CreateController')->name('todo.create');
+    Route::post('/', 'StoreController')->name('todo.store');
 });
 
 Route::get('/dashboard', function () {
