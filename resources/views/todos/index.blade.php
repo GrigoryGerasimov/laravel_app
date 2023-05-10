@@ -37,9 +37,18 @@
                             Edit
                         </a>
 
-                        <x-primary-button class="ml-4 bg-green-400 dark:bg-green-400">
-                            Done!
-                        </x-primary-button>
+                        <form action="{{ route('todo.done', $todo) }}" method="POST" enctype="application/x-www-form-urlencoded">
+                            @csrf
+                            @method('patch')
+
+                            <input type="hidden" id="title" name="title" value="{{ $todo->title }}" />
+                            <input type="hidden" id="content" name="content" value="{{ $todo->content }}" />
+                            <input type="hidden" id="done" name="done" value="true" />
+
+                            <x-primary-button class="ml-4 bg-green-400 dark:bg-green-400">
+                                Done!
+                            </x-primary-button>
+                        </form>
                     </div>
                 </div>
             @endforeach
