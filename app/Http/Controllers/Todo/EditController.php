@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Todo;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Todo;
+use Illuminate\Contracts\View\View;
 
 class EditController extends Controller
 {
-    //
+    public function __invoke(Todo $todo): View
+    {
+        return view('todos.edit', compact('todo'));
+    }
 }

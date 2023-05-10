@@ -7,6 +7,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Todo'], function() {
     Route::get('/', 'IndexController')->name('todo.index');
     Route::get('/todo/create', 'CreateController')->name('todo.create');
     Route::post('/', 'StoreController')->name('todo.store');
+    Route::get('/todo/{todo}', 'EditController')->name('todo.edit');
+    Route::patch('/todo/{todo}', 'UpdateController')->name('todo.update');
+    Route::get('/todo/{todo}/delete', 'DestroyController')->name('todo.destroy');
 });
 
 Route::get('/dashboard', function () {
