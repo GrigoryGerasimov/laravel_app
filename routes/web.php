@@ -10,6 +10,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Todo'], function() {
     Route::get('/todo/{todo}', 'EditController')->name('todo.edit');
     Route::patch('/todo/{todo}', 'UpdateController')->name('todo.update');
     Route::get('/todo/{todo}/delete', 'DestroyController')->name('todo.destroy');
+    Route::patch('/todo/{todo}/done', 'DoneController')->name('todo.done');
 });
 
 Route::get('/dashboard', function () {
