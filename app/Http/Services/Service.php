@@ -12,4 +12,6 @@ abstract class Service implements ServiceInterface
     abstract public static function store(FormRequest $request): Model;
 
     abstract public static function update(Model $model, FormRequest $request): Model;
+
+    abstract public static function restore($modelId): Model;
 }
