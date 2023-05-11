@@ -19,7 +19,7 @@ final class TodoService extends Service
 
             $todoData = $request->validated();
 
-            $todoData['user_id'] = auth()->id();
+            $todoData['user_id'] ??= auth()->id();
 
             $todo = Todo::create($todoData);
 
@@ -50,5 +50,24 @@ final class TodoService extends Service
         }
 
         return $model;
+    }
+
+    public static function restore($modelId): Model
+    {
+        try {
+            DB::beginTransaction();
+
+            $todo = Todo::withTrashed()->find($modelId);
+
+            $todo->restore();
+
+            DB::commit();
+        } catch(\Exception $e) {
+            DB::rollback();
+
+            echo $e->getMessage();
+        }
+
+        return $todo;
     }
 }

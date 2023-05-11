@@ -12,4 +12,6 @@ interface ServiceInterface
     public static function store(FormRequest $request): Model;
 
     public static function update(Model $model, FormRequest $request): Model;
+
+    public static function restore($modelId): Model;
 }

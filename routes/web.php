@@ -4,16 +4,18 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'App\Http\Controllers\Todo'], function() {
-    Route::get('/', 'IndexController')->name('todo.index');
-    Route::get('/todo/create', 'CreateController')->name('todo.create');
-    Route::post('/', 'StoreController')->name('todo.store');
-    Route::get('/todo/{todo}', 'EditController')->name('todo.edit');
-    Route::patch('/todo/{todo}', 'UpdateController')->name('todo.update');
-    Route::get('/todo/{todo}/delete', 'DestroyController')->name('todo.destroy');
-    Route::patch('/todo/{todo}/done', 'DoneController')->name('todo.done');
+    Route::group(['namespace' => 'Web'], function() {
+        Route::get('/todos', 'IndexController')->name('todo.index');
+        Route::get('/todos/create', 'CreateController')->name('todo.create');
+        Route::post('/todos', 'StoreController')->name('todo.store');
+        Route::get('/todo/{todo}', 'EditController')->name('todo.edit');
+        Route::patch('/todo/{todo}', 'UpdateController')->name('todo.update');
+        Route::get('/todo/{todo}/delete', 'DestroyController')->name('todo.destroy');
+        Route::patch('/todo/{todo}/done', 'DoneController')->name('todo.done');
+    });
 });
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

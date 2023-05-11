@@ -16,7 +16,8 @@ class TodoRequest extends FormRequest
         return [
             'title' => 'required|string',
             'content' => 'required|string',
-            'done' => 'required|string'
+            'done' => 'required|string',
+            'user_id' => 'required|int'
         ];
     }
 }
