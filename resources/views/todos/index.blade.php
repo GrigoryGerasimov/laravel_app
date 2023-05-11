@@ -2,9 +2,7 @@
 
 @section('content')
     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-gray-200">
-        <a href="{{ route('todo.create') }}">New Task</a>
-
-        <div class="py-12 w-[350px]">
+        <div class="w-[350px]">
             @if(!count($todosList))
                 No tasks available
             @endif
