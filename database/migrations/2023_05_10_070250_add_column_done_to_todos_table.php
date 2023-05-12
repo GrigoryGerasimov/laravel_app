@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('todos', function (Blueprint $table) {
-            $table->string('done')->nullable(false)->after('content');
+            $table->boolean('done')->nullable(false)->after('content');
         });
     }
 
