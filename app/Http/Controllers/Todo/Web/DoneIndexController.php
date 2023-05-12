@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Todo;
 use Illuminate\Contracts\View\View;
 
-class DoneIndexController extends Controller
+final class DoneIndexController extends Controller
 {
     public function __invoke(): View
     {

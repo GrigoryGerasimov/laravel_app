@@ -7,7 +7,7 @@ use App\Http\Resources\Todo\TodoResource;
 use App\Models\Todo;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ShowController extends Controller
+final class ShowController extends Controller
 {
     public function __invoke(Todo $todo): JsonResource
     {

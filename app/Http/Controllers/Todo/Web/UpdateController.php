@@ -8,7 +8,7 @@ use App\Http\Services\Todo\TodoService;
 use App\Models\Todo;
 use Illuminate\Http\RedirectResponse;
 
-class UpdateController extends Controller
+final class UpdateController extends Controller
 {
     public function __invoke(Todo $todo, TodoRequest $request): RedirectResponse
     {
