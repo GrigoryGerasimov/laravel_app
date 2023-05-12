@@ -16,7 +16,7 @@ class TodoApiRequest extends FormRequest
         return [
             'title' => 'required|string',
             'content' => 'required|string',
-            'done' => 'required|string',
+            'done' => 'required|bool',
             'user_id' => 'required|int'
         ];
     }

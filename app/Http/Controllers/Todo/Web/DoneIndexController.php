@@ -10,7 +10,7 @@ class DoneIndexController extends Controller
 {
     public function __invoke(): View
     {
-        $todosList = Todo::where('done', 'true')->get();
+        $todosList = auth()->user()->todos->where('done', true);
 
         return view('todos.index', compact('todosList'));
     }
