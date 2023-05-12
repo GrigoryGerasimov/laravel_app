@@ -9,7 +9,7 @@ use App\Models\Todo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 
-class DoneController extends Controller
+final class DoneController extends Controller
 {
     public function __invoke(Todo $todo, TodoRequest $request): RedirectResponse
     {

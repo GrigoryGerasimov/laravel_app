@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Todo;
 use Illuminate\Contracts\View\View;
 
-class EditController extends Controller
+final class EditController extends Controller
 {
     public function __invoke(Todo $todo): View
     {

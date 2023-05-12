@@ -7,7 +7,7 @@ use App\Http\Resources\Todo\TodoResource;
 use App\Http\Services\Todo\TodoService;
 use App\Models\Todo;
 
-class RestoreController extends Controller
+final class RestoreController extends Controller
 {
     public function __invoke($todoId): TodoResource
     {

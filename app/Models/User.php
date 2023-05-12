@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Todo;
 
-class User extends Authenticatable
+final class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 

@@ -4,7 +4,7 @@ namespace App\Http\Requests\Todo;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TodoApiRequest extends FormRequest
+final class TodoApiRequest extends FormRequest
 {
     public function authorize(): bool
     {

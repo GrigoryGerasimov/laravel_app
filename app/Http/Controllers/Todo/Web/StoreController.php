@@ -7,7 +7,7 @@ use App\Http\Requests\Todo\TodoRequest;
 use App\Http\Services\Todo\TodoService;
 use Illuminate\Http\RedirectResponse;
 
-class StoreController extends Controller
+final class StoreController extends Controller
 {
     public function __invoke(TodoRequest $request): RedirectResponse
     {

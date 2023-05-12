@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Todo\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 
-class CreateController extends Controller
+final class CreateController extends Controller
 {
     public function __invoke(): View
     {
